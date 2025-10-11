@@ -205,24 +205,24 @@ public class ConceptAprilTag extends LinearOpMode {
                 telemetry.addLine(String.format("Center %6.0f %6.0f   (pixels)", detection.center.x, detection.center.y));
             }
             if (detection.id == 20) {
-                telemetry.addLine("Blue side idk");
-                android.util.Log.i("AprilTag", "Blue side idk - Tag 23 detected!");
+                telemetry.addLine("Blue");
+                android.util.Log.i("AprilTag", "Blue - Tag 23 detected!");
             }
-            if (detection.id == 21) {
+            else if (detection.id == 21) {
                 telemetry.addLine("MOTIF GPP");
                 android.util.Log.i("AprilTag", "MOTIF GPP - Tag 21 detected!");
             }
-            if (detection.id == 22) {
+            else if (detection.id == 22) {
                 telemetry.addLine("MOTIF PGP");
                 android.util.Log.i("AprilTag", "MOTIF PGP - Tag 22 detected!");
             }
-            if (detection.id == 23) {
+            else if (detection.id == 23) {
                 telemetry.addLine("MOTIF PPG");
                 android.util.Log.i("AprilTag", "MOTIF PPG - Tag 23 detected!");
             }
-            if (detection.id == 24) {
-                telemetry.addLine("Red side idk");
-                android.util.Log.i("AprilTag", "Red side idk - Tag 23 detected!");
+            else if (detection.id == 24) {
+                telemetry.addLine("Red");
+                android.util.Log.i("AprilTag", "Red - Tag 23 detected!");
             }
         }   // end for() loop
 
