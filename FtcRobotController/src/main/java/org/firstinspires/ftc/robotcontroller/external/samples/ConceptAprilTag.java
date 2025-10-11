@@ -66,7 +66,6 @@ import java.util.List;
  * Remove or comment out the @Disabled line to add this OpMode to the Driver Station OpMode list.
  */
 @TeleOp(name = "Concept: AprilTag", group = "Concept")
-@Disabled
 public class ConceptAprilTag extends LinearOpMode {
 
     private static final boolean USE_WEBCAM = true;  // true for webcam, false for phone camera
@@ -155,7 +154,7 @@ public class ConceptAprilTag extends LinearOpMode {
 
         // Set the camera (webcam vs. built-in RC phone camera).
         if (USE_WEBCAM) {
-            builder.setCamera(hardwareMap.get(WebcamName.class, "Webcam 1"));
+            builder.setCamera(hardwareMap.get(WebcamName.class, "kusagscamera"));
         } else {
             builder.setCamera(BuiltinCameraDirection.BACK);
         }
@@ -205,12 +204,29 @@ public class ConceptAprilTag extends LinearOpMode {
                 telemetry.addLine(String.format("\n==== (ID %d) Unknown", detection.id));
                 telemetry.addLine(String.format("Center %6.0f %6.0f   (pixels)", detection.center.x, detection.center.y));
             }
+            if (detection.id == 20) {
+                telemetry.addLine("Blue side idk");
+            }
+            if (detection.id == 21) {
+                telemetry.addLine("MOTIF GPP");
+                //android.util.Log.i("AprilTag", "MOTIF GPP - Tag 21 detected!");
+            }
+            if (detection.id == 22) {
+                telemetry.addLine("MOTIF PGP");
+            }
+            if (detection.id == 23) {
+                telemetry.addLine("MOTIF PPG");
+            }
+            if (detection.id == 24) {
+                telemetry.addLine("Red side idk");
+            }
         }   // end for() loop
 
         // Add "key" information to telemetry
         telemetry.addLine("\nkey:\nXYZ = X (Right), Y (Forward), Z (Up) dist.");
         telemetry.addLine("PRY = Pitch, Roll & Yaw (XYZ Rotation)");
         telemetry.addLine("RBE = Range, Bearing & Elevation");
+
 
     }   // end method telemetryAprilTag()
 
